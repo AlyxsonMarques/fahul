@@ -1,0 +1,58 @@
+* {
+    color: #282828;
+}
+
+svg {
+    display: block;
+}
+
+.headerContent {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   
+   padding: 20px;
+}
+
+.headerLeft, .headerRight, .headerMenu {
+    display: flex;
+    align-items: center;
+}
+
+.headerOption {
+    padding: 0px 5px;
+    cursor: pointer;
+    vertical-align: center;
+}
+
+.headerLogo {
+    width: 100px;
+}
+
+.headerLogoImg {
+    display: block;
+    width: 100%;
+}
+
+.headerSearch {
+    display: flex;
+}
+
+.headerSearchInput {
+    display: none;
+}
+
+.headerFooter {
+    display: flex;
+    align-items: center;
+
+    border-top: 1px solid rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+
+    padding: 5px;
+}
+
+.menuText {
+    font-size: .8em;
+    margin: 0px 5px;
+}
