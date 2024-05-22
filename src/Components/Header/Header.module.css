@@ -6,15 +6,19 @@ svg {
     display: block;
 }
 
+header {
+    /*box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);*/
+}
+
 .headerContent {
    display: flex;
    align-items: center;
    justify-content: space-between;
    
-   padding: 20px;
+   padding: 30px;
 }
 
-.headerLeft, .headerRight, .headerMenu {
+.headerLeft, .headerRight, .headerMenu, .headerSearch {
     display: flex;
     align-items: center;
 }
@@ -23,6 +27,7 @@ svg {
     padding: 0px 5px;
     cursor: pointer;
     vertical-align: center;
+    width: 36px;
 }
 
 .headerLogo {
@@ -34,10 +39,6 @@ svg {
     width: 100%;
 }
 
-.headerSearch {
-    display: flex;
-}
-
 .headerSearchInput {
     display: none;
 }
@@ -46,10 +47,13 @@ svg {
     display: flex;
     align-items: center;
 
-    border-top: 1px solid rgba(0, 0, 0, 0.5);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+}
 
-    padding: 5px;
+.headerMenu {
+    width: 20px;
 }
 
 .menuText {
