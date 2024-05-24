@@ -1,20 +1,10 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import ImageSliderStyle from './ImageSlider.module.css';
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect, useCallback } from 'react';
 
 const ImageSlider = ({ slides }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
-
-    let timerRef = useRef(null);
-    if(timerRef.current) {
-        clearTimeout(timerRef.current)
-    }
-    useEffect(() => {
-        timerRef.current = setTimeout(() => {
-            handleRightArrowClick();
-        }, 3000)
-    })
 
     function handleLeftArrowClick() {
         let newSlideIndex = 0;
@@ -27,7 +17,7 @@ const ImageSlider = ({ slides }) => {
         setCurrentIndex(newSlideIndex);
     }
 
-    function handleRightArrowClick() {
+     const handleRightArrowClick = useCallback(() => {
         let newSlideIndex = 0;
         if(currentIndex + 1 > slides.length - 1) newSlideIndex = 0;
         else {
@@ -36,7 +26,19 @@ const ImageSlider = ({ slides }) => {
         slides[currentIndex].isActive = false;
         slides[newSlideIndex].isActive = true;
         setCurrentIndex(newSlideIndex);
+    }, [currentIndex, slides])
+    
+    let timerRef = useRef(null);
+    if(timerRef.current) {
+        clearTimeout(timerRef.current)
     }
+    useEffect(() => {
+        timerRef.current = setTimeout(() => {
+            handleRightArrowClick();
+        }, 3000)
+
+        return () => clearTimeout(timerRef.current);
+    }, [handleRightArrowClick])
 
     return (
         <div className={ImageSliderStyle.imageSlider}>
