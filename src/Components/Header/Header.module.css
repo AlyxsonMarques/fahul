@@ -7,7 +7,11 @@ svg {
 }
 
 header {
-    /*box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);*/
+/*     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); */
+/*     position: sticky;
+    top: 0px;
+    z-index: 1; */
+/*     background-color: white; */
 }
 
 .headerContent {
@@ -15,12 +19,52 @@ header {
    align-items: center;
    justify-content: space-between;
    
-   padding: 30px;
+   padding: 0 20px 0px 20px;
 }
 
 .headerLeft, .headerRight, .headerMenu, .headerSearch {
     display: flex;
     align-items: center;
+}
+
+.headerSearch {
+    display: flex;
+    display: none;
+    justify-content: center;
+    position: absolute;
+    background-color: white;
+    width: 100%;
+    height: 102px;
+    left: 0px;
+    top: 0px;
+    overflow: hidden;
+    padding: 0px 20px 0px 20px;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, .2);
+}
+
+.headerSearchBox {
+    display: flex;
+    width: 80%;
+    height: 30px;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
+    border-radius: 10px;
+    padding: 0px 5px 0px 5px;
+}
+
+.headerSearchBox svg {
+    padding: 5px 10px 5px 10px;
+}
+
+.headerSearchInput {
+    width: 100%;
+    border: none;
+    margin-right: 5px;
+    border-radius: 10px;
+}
+
+.headerSearchInput:focus {
+    outline: none;
+    border: none;
 }
 
 .headerOption {
@@ -39,10 +83,6 @@ header {
     width: 100%;
 }
 
-.headerSearchInput {
-    display: none;
-}
-
 .headerFooter {
     display: flex;
     align-items: center;
@@ -59,4 +99,49 @@ header {
 .menuText {
     font-size: .8em;
     margin: 0px 5px;
+}
+
+.profileBtn {
+    position: relative;
+}
+
+.profileModal {
+    display: block;
+    flex-direction: column;
+    font-size: .9em;
+    z-index: 10;
+    top: 70px;
+    right: 20px;
+    position: absolute;
+    background-color: #fafafa;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, .2);
+    width: 200px;
+}
+
+.profileModal::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    right: 6.5px;
+    height: 20px;
+    width: 20px;
+    transform: rotate(45deg);
+    background-color: #fafafa;
+}
+
+.profileModal a {
+    padding: 5px 10px 5px 10px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.profileModal a svg {
+    width: 15px;
+    margin-right: 5px;
+}
+
+.profileModal a:active {
+    background-color: #ffffff;
 }

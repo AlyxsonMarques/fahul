@@ -1,6 +1,7 @@
-import Header from "./Components/Header/Header";
-import ImageSlider from "./Components/AnnouncementCarousel/ImageSlider";
-import AnnouncementSection from "./Components/AnnouncementSection/AnnouncementSection";
+import Header from "../Components/Header/Header";
+import ImageSlider from "../Components/AnnouncementCarousel/ImageSlider";
+import AnnouncementSection from "../Components/AnnouncementSection/AnnouncementSection";
+import Footer from "../Components/Footer/Footer"
 
 function Home() {
   let paidAnnouncements = [
@@ -34,6 +35,7 @@ function Home() {
       <Header />
       <ImageSlider slides={paidAnnouncements} />
       <AnnouncementSection announces={mainAnnouncements}/>
+      <Footer />
     </>
   )
 }
